@@ -16,13 +16,13 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
+/* NAV */
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
 .logo svg{display:block;flex-shrink:0}
 .logo-txt{display:flex;flex-direction:column;line-height:1}
 .logo-name{font-family:var(--fh);font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-.4px}
 .logo-sub{font-size:9.5px;color:var(--muted);font-weight:500;letter-spacing:.6px;text-transform:uppercase;margin-top:3px}
-
-nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line-2)}
+nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.88);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line-2)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-links{display:flex;gap:4px;list-style:none}
 .nav-links a{padding:8px 14px;border-radius:9px;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:all .18s}
@@ -39,7 +39,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.8);backdrop-f
 .btn-ghost{background:var(--white);color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:10px;font-size:14px}
 .btn-ghost:hover{border-color:var(--ink-2);background:var(--bg-soft)}
 .btn-lg{padding:14px 28px;font-size:15px;border-radius:12px}
-
 .burger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none}
 .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .25s}
 .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -50,152 +49,147 @@ nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.8);backdrop-f
 .mobile-menu a{padding:16px;border-radius:12px;font-size:18px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
 .mobile-menu .btn{margin-top:16px;width:100%;padding:16px}
 
-.hero{padding:80px 0 90px;text-align:center;position:relative}
+/* HERO */
+.hero{padding:88px 0 96px;text-align:center;position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:30px;padding:6px 14px 6px 12px;margin-bottom:28px;font-size:13px;font-weight:500;color:var(--ink-2);box-shadow:0 1px 2px rgba(10,14,23,.04)}
 .eyebrow b{display:inline-flex;align-items:center;gap:5px;color:var(--blue);font-weight:600}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--blue)}
-.hero h1{font-family:var(--fh);font-weight:700;font-size:clamp(34px,7vw,68px);line-height:1.04;letter-spacing:-1.8px;color:var(--ink);margin-bottom:22px;max-width:13ch;margin-left:auto;margin-right:auto}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-family:var(--fh);font-weight:700;font-size:clamp(36px,7vw,72px);line-height:1.04;letter-spacing:-2px;color:var(--ink);margin-bottom:24px;max-width:14ch;margin-left:auto;margin-right:auto}
 .hero h1 em{font-style:normal;color:var(--blue)}
-.hero-sub{font-size:clamp(16px,2.2vw,19px);color:var(--ink-2);line-height:1.6;max-width:580px;margin:0 auto 36px}
+.hero-sub{font-size:clamp(16px,2.2vw,19px);color:var(--ink-2);line-height:1.65;max-width:600px;margin:0 auto 40px}
 .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .hero-cta .btn{flex:0 1 auto}
-.hero-note{margin-top:22px;font-size:13px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:7px}
-.hero-note span{color:var(--blue)}
+.hero-note{margin-top:24px;font-size:13px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.hero-note-item{display:flex;align-items:center;gap:6px}
+.hero-note-item svg{color:var(--blue);width:14px;height:14px;flex-shrink:0}
 
-.eco{margin-top:64px;max-width:720px;margin-left:auto;margin-right:auto}
-.eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+/* ECO DIAGRAM */
+.eco{margin-top:72px;max-width:740px;margin-left:auto;margin-right:auto}
+.eco-label{text-align:center;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:20px;letter-spacing:.2px}
+.eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
 .eco-core{
   grid-column:1 / -1;
   display:flex;align-items:center;justify-content:center;gap:12px;
-  background:var(--ink);color:var(--white);border-radius:18px;padding:20px;
+  background:var(--ink);color:var(--white);border-radius:20px;padding:22px;
   font-family:var(--fh);font-weight:700;font-size:18px;letter-spacing:-.3px;
-  margin-bottom:2px;
+  margin-bottom:4px;position:relative;overflow:hidden;
 }
-.eco-core svg{width:26px;height:26px}
+.eco-core::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,110,242,.15),transparent);pointer-events:none}
+.eco-core svg{width:26px;height:26px;flex-shrink:0}
+.eco-core-sub{font-size:13px;font-weight:400;color:rgba(255,255,255,.5);margin-left:8px}
 .eco-node{
   display:flex;align-items:center;gap:13px;
   background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;
-  transition:all .25s;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+  position:relative;
 }
-.eco-node:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,14,23,.05)}
-.eco-ic{width:40px;height:40px;border-radius:11px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.eco-node:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,110,242,.1)}
+.eco-ic{width:40px;height:40px;border-radius:11px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0;transition:background .25s}
+.eco-node:hover .eco-ic{background:#dce8ff}
 .eco-ic svg{width:20px;height:20px}
 .eco-txt{text-align:left;min-width:0}
 .eco-name{font-family:var(--fh);font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-.2px}
 .eco-sub{font-size:12.5px;color:var(--muted)}
 
-.partners{padding:64px 0;border-top:1px solid var(--line-2)}
-.partners-head{text-align:center;margin-bottom:36px}
-.partners-head .kicker{display:block}
-.partners-head h3{font-family:var(--fh);font-weight:700;font-size:clamp(22px,3vw,30px);letter-spacing:-.5px;color:var(--ink)}
-.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.pcard{
-  display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;
-  background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px 20px;
-  text-decoration:none;transition:all .25s;
-}
-.pcard:hover{border-color:var(--ink);transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,14,23,.06)}
-.pcard-logo{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:20px;color:var(--white)}
-.pcard-name{font-family:var(--fh);font-weight:700;font-size:15px;color:var(--ink)}
-.pcard-cat{font-size:12.5px;color:var(--muted)}
-.pcard-link{font-size:12.5px;color:var(--blue);font-weight:600;display:inline-flex;align-items:center;gap:4px;margin-top:2px;transition:gap .2s}
-.pcard:hover .pcard-link{gap:7px}
-
-.sec{padding:90px 0}
-.sec-head{max-width:620px;margin-bottom:52px}
+/* COMMON SECTION */
+.sec{padding:96px 0}
+.sec-head{max-width:640px;margin-bottom:56px}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.kicker{font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.3px;margin-bottom:14px;display:block}
-.sec-title{font-family:var(--fh);font-weight:700;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-1px;color:var(--ink);margin-bottom:16px}
-.sec-desc{font-size:17px;color:var(--ink-2);line-height:1.6}
+.kicker{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.8px;margin-bottom:14px;display:block;text-transform:uppercase}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-1.2px;color:var(--ink);margin-bottom:18px}
+.sec-desc{font-size:17px;color:var(--ink-2);line-height:1.65}
 
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px;transition:all .25s;cursor:pointer;display:flex;flex-direction:column}
-.card:hover{border-color:var(--ink);box-shadow:0 8px 30px rgba(10,14,23,.06);transform:translateY(-3px)}
-.card-feat{grid-column:span 3}
-.card-reg{grid-column:span 2}
-.card-wide{grid-column:span 3}
-.c-icon{width:46px;height:46px;border-radius:13px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;margin-bottom:auto;color:var(--blue)}
-.c-icon svg{width:22px;height:22px}
-.c-body{margin-top:28px}
-.c-name{font-family:var(--fh);font-weight:700;font-size:19px;color:var(--ink);margin-bottom:9px;letter-spacing:-.3px}
-.c-desc{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-bottom:16px}
-.c-link{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;transition:gap .2s}
-.c-link:hover{gap:9px}
+/* PHILOSOPHY */
+.phil{background:var(--ink);border-radius:28px;padding:72px 64px;margin:0 0 0 0;position:relative;overflow:hidden}
+.phil::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(26,110,242,.18) 0%,transparent 70%);pointer-events:none}
+.phil::after{content:'';position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(26,110,242,.1) 0%,transparent 70%);pointer-events:none}
+.phil .kicker{color:#6FA4FF}
+.phil-title{font-family:var(--fh);font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-1.2px;color:var(--white);margin-bottom:20px}
+.phil-desc{font-size:18px;color:rgba(255,255,255,.65);line-height:1.7;max-width:640px;margin-bottom:48px}
+.phil-points{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pp{border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+.pp-n{font-family:var(--fh);font-weight:700;font-size:13px;color:#6FA4FF;margin-bottom:10px}
+.pp-h{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--white);margin-bottom:8px;letter-spacing:-.3px}
+.pp-d{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
 
-.stats-sec{background:var(--ink);border-radius:28px;padding:64px 48px;margin:0 24px}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:var(--max);margin:0 auto}
-.stat{text-align:center}
-.stat-n{font-family:var(--fh);font-weight:700;font-size:clamp(40px,5vw,56px);color:var(--white);line-height:1;letter-spacing:-1.5px;margin-bottom:10px}
-.stat-l{font-size:14px;color:rgba(255,255,255,.55);line-height:1.4}
+/* DIRECTIONS */
+.dir-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.dir-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:36px;transition:border-color .25s,transform .3s cubic-bezier(.22,1,.36,1),box-shadow .25s;cursor:default;display:flex;flex-direction:column;gap:20px}
+.dir-card:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 16px 48px rgba(10,14,23,.07)}
+.dir-icon{width:52px;height:52px;border-radius:14px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.dir-icon svg{width:24px;height:24px}
+.dir-tag{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.dir-name{font-family:var(--fh);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:-.4px;margin-bottom:10px}
+.dir-desc{font-size:15px;color:var(--ink-2);line-height:1.6;flex:1}
+.dir-items{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.dir-item{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-2)}
+.dir-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.why-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-.why-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line-2)}
-.why-item:last-child{border-bottom:none}
-.why-ic{width:42px;height:42px;border-radius:12px;flex-shrink:0;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.why-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px;transition:border-color .25s,transform .3s cubic-bezier(.22,1,.36,1)}
+.why-card:hover{border-color:var(--ink);transform:translateY(-3px);box-shadow:0 8px 30px rgba(10,14,23,.06)}
+.why-card:nth-child(4){grid-column:span 1}
+.why-card:nth-child(5){grid-column:span 2}
+.why-num{font-family:var(--fh);font-weight:700;font-size:13px;color:var(--blue);margin-bottom:16px}
+.why-ic{width:44px;height:44px;border-radius:12px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:18px}
 .why-ic svg{width:20px;height:20px}
-.why-h{font-family:var(--fh);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:5px}
-.why-d{font-size:14px;color:var(--ink-2);line-height:1.55}
-.why-visual{background:var(--bg-soft);border:1px solid var(--line);border-radius:24px;padding:36px}
-.wv-title{font-family:var(--fh);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:28px}
-.prog{margin-bottom:22px}
-.prog:last-child{margin-bottom:0}
-.prog-top{display:flex;justify-content:space-between;margin-bottom:9px;font-size:14px}
-.prog-top span:first-child{color:var(--ink-2);font-weight:500}
-.prog-top span:last-child{color:var(--ink);font-weight:700}
-.prog-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.prog-fill{height:100%;border-radius:3px;background:var(--blue);width:0;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.why-h{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--ink);margin-bottom:9px;letter-spacing:-.3px}
+.why-d{font-size:14px;color:var(--ink-2);line-height:1.6}
 
-.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.step{position:relative;padding-top:24px}
-.step::before{content:'';position:absolute;top:0;left:0;width:32px;height:2px;background:var(--blue);border-radius:2px}
-.step-n{font-family:var(--fh);font-weight:700;font-size:13px;color:var(--blue);margin-bottom:12px}
+/* HONEST PARTNERSHIP */
+.honest{background:var(--bg-soft);border:1px solid var(--line);border-radius:28px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.honest-list{display:flex;flex-direction:column;gap:0}
+.honest-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.honest-item:first-child{padding-top:0}
+.honest-item:last-child{border-bottom:none;padding-bottom:0}
+.honest-ic{width:36px;height:36px;border-radius:10px;background:var(--white);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue)}
+.honest-ic svg{width:16px;height:16px}
+.honest-h{font-family:var(--fh);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px}
+.honest-d{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+
+/* PROCESS */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{position:relative;padding:32px 28px 32px 0;border-right:1px solid var(--line-2)}
+.step:last-child{border-right:none;padding-right:0}
+.step:first-child{padding-left:0}
+.step-n{font-family:var(--fh);font-weight:700;font-size:36px;color:var(--line);line-height:1;margin-bottom:20px;letter-spacing:-1px}
 .step-h{font-family:var(--fh);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
-.step-d{font-size:14px;color:var(--ink-2);line-height:1.55}
+.step-d{font-size:14px;color:var(--ink-2);line-height:1.6}
+.step-line{width:28px;height:2px;background:var(--blue);border-radius:2px;margin-bottom:16px}
 
-.port{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.pc{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white);transition:all .25s;cursor:pointer}
-.pc:hover{border-color:var(--ink);box-shadow:0 8px 30px rgba(10,14,23,.06);transform:translateY(-3px)}
-.pc-img{height:180px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
-.pc-1{background:linear-gradient(135deg,#EEF4FF,#DCE8FF)}
-.pc-2{background:linear-gradient(135deg,#F0F0F5,#E2E3EC)}
-.pc-3{background:linear-gradient(135deg,#E8F7F1,#D5EFE3)}
-.pc-img svg{width:48px;height:48px;opacity:.4}
-.pc-body{padding:22px}
-.pc-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-soft);padding:3px 10px;border-radius:6px;margin-bottom:12px}
-.pc-name{font-family:var(--fh);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
-.pc-desc{font-size:14px;color:var(--ink-2);line-height:1.55}
-.pc-metric{margin-top:14px;font-family:var(--fh);font-weight:700;font-size:15px;color:var(--ink)}
-.pc-metric b{color:var(--blue)}
-.pc-metric small{color:var(--ink-2);font-weight:500;font-family:var(--fb);font-size:14px}
-
-.cta-sec{padding:90px 0}
-.cta-box{background:var(--ink);border-radius:28px;padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+/* CTA */
+.cta-sec{padding:96px 0}
+.cta-box{background:var(--ink);border-radius:28px;padding:80px 64px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(26,110,242,.2) 0%,transparent 70%);pointer-events:none}
 .cta-box .kicker{color:#6FA4FF}
-.cta-box h2{font-family:var(--fh);font-weight:700;font-size:clamp(28px,4vw,44px);color:var(--white);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
-.cta-box p{font-size:17px;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 36px;line-height:1.6}
-.cta-box .btn-blue{padding:15px 32px;font-size:16px}
+.cta-box h2{font-family:var(--fh);font-weight:700;font-size:clamp(28px,4vw,46px);color:var(--white);letter-spacing:-1.2px;line-height:1.08;margin-bottom:18px}
+.cta-box p{font-size:18px;color:rgba(255,255,255,.55);max-width:500px;margin:0 auto 40px;line-height:1.65}
+.cta-box .btn-blue{padding:16px 36px;font-size:16px;border-radius:13px}
 
+/* CONTACT */
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.perks{display:flex;flex-direction:column;gap:18px;margin-top:32px}
+.perks{display:flex;flex-direction:column;gap:16px;margin-top:32px}
 .perk{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--ink-2)}
 .perk-ic{width:36px;height:36px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue)}
 .perk-ic svg{width:18px;height:18px}
-.form-box{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:32px}
+.form-box{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:36px}
 .form-box h3{font-family:var(--fh);font-weight:700;font-size:20px;margin-bottom:24px;letter-spacing:-.3px}
 .fg{display:flex;flex-direction:column;gap:14px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fi{width:100%;padding:13px 16px;background:var(--bg);border:1px solid var(--line);border-radius:11px;color:var(--ink);font-size:14.5px;font-family:var(--fb);outline:none;transition:all .18s}
 .fi::placeholder{color:var(--muted)}
-.fi:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.fi:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);background:var(--white)}
 .fi-ta{resize:none;height:96px}
 select.fi{color:var(--muted);cursor:pointer}
-.form-box .btn-blue{width:100%;padding:14px;font-size:15px;margin-top:4px}
+.form-box .btn-blue{width:100%;padding:14px;font-size:15px;margin-top:4px;border-radius:12px}
 
+/* FOOTER */
 footer{border-top:1px solid var(--line);padding:64px 0 32px}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.ft-about{font-size:14px;color:var(--muted);line-height:1.6;margin-top:16px;max-width:260px}
-.ft-h{font-family:var(--fh);font-weight:700;font-size:13px;color:var(--ink);margin-bottom:16px;letter-spacing:.2px}
+.ft-about{font-size:14px;color:var(--muted);line-height:1.65;margin-top:16px;max-width:260px}
+.ft-h{font-family:var(--fh);font-weight:700;font-size:12px;color:var(--ink);margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase}
 .ft-links{display:flex;flex-direction:column;gap:11px}
 .ft-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .18s}
 .ft-links a:hover{color:var(--ink)}
@@ -203,48 +197,56 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
 .ft-copy{font-size:13px;color:var(--muted)}
 .ft-soc{display:flex;gap:8px}
 .soc{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-2);text-decoration:none;transition:all .18s}
-.soc:hover{border-color:var(--ink);color:var(--ink)}
+.soc:hover{border-color:var(--ink);color:var(--ink);background:var(--bg-soft)}
 .soc svg{width:17px;height:17px}
 
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+/* ANIMATIONS */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
 .rv.vis{opacity:1;transform:none}
+.rv-d1{transition-delay:.1s}
+.rv-d2{transition-delay:.2s}
+.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);z-index:200;background:var(--ink);color:var(--white);border-radius:12px;padding:14px 22px;font-size:14px;font-weight:500;display:flex;align-items:center;gap:9px;opacity:0;transition:all .35s;box-shadow:0 12px 40px rgba(10,14,23,.25)}
 .toast.on{transform:translateX(-50%) translateY(0);opacity:1}
 
+/* RESPONSIVE */
 @media(max-width:980px){
-  .bento{grid-template-columns:repeat(2,1fr)}
-  .card-feat,.card-reg,.card-wide{grid-column:span 1}
-  .split{grid-template-columns:1fr;gap:40px}
+  .dir-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why-card:nth-child(5){grid-column:span 1}
+  .phil-points{grid-template-columns:1fr}
+  .honest{grid-template-columns:1fr;gap:40px;padding:48px}
   .contact{grid-template-columns:1fr;gap:40px}
-  .proc{grid-template-columns:repeat(2,1fr);gap:28px}
+  .proc{grid-template-columns:repeat(2,1fr)}
+  .step{border-right:none;border-bottom:1px solid var(--line-2);padding:0 0 28px}
+  .step:nth-child(2n){border-bottom:none}
   .ft-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .partners-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-r .btn-blue,.nav-r .lang{display:none}
   .burger{display:flex}
-  .hero{padding:48px 0 56px}
-  .sec{padding:60px 0}
-  .stats-sec{padding:44px 24px;margin:0 16px;border-radius:24px}
-  .stats-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .cta-box{padding:48px 24px}
-  .cta-sec{padding:60px 0}
-  .partners{padding:48px 0}
+  .hero{padding:56px 0 64px}
+  .sec{padding:64px 0}
+  .cta-box{padding:48px 28px}
+  .cta-sec{padding:64px 0}
   .sec-head{margin-bottom:40px}
   .ft-bot{flex-direction:column;align-items:flex-start}
-  .eco{margin-top:44px}
+  .eco{margin-top:48px}
+  .phil{padding:48px 28px}
+  .why-grid{grid-template-columns:1fr}
+  .why-card:nth-child(4),.why-card:nth-child(5){grid-column:span 1}
 }
 @media(max-width:480px){
   .wrap{padding:0 18px}
-  .bento{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr 1fr;gap:24px}
   .proc{grid-template-columns:1fr}
+  .step:nth-child(2n){border-bottom:1px solid var(--line-2)}
+  .step:last-child{border-bottom:none}
   .ft-grid{grid-template-columns:1fr 1fr}
   .frow{grid-template-columns:1fr}
-  .card{padding:24px}
-  .partners-grid{grid-template-columns:1fr 1fr}
   .eco-grid{grid-template-columns:1fr}
+  .honest{padding:32px 24px}
 }
 </style>
 </head>
@@ -264,9 +266,9 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
       </span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services" data-uk="Послуги" data-en="Services">Послуги</a></li>
+      <li><a href="#directions" data-uk="Напрями" data-en="Directions">Напрями</a></li>
+      <li><a href="#philosophy" data-uk="Філософія" data-en="Philosophy">Філософія</a></li>
       <li><a href="#why" data-uk="Про нас" data-en="About">Про нас</a></li>
-      <li><a href="#partners" data-uk="Партнери" data-en="Partners">Партнери</a></li>
       <li><a href="#contact" data-uk="Контакти" data-en="Contacts">Контакти</a></li>
     </ul>
     <div class="nav-r">
@@ -281,209 +283,296 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMenu()" data-uk="Послуги" data-en="Services">Послуги</a>
+  <a href="#directions" onclick="toggleMenu()" data-uk="Напрями роботи" data-en="Directions">Напрями роботи</a>
+  <a href="#philosophy" onclick="toggleMenu()" data-uk="Філософія" data-en="Philosophy">Філософія</a>
   <a href="#why" onclick="toggleMenu()" data-uk="Про нас" data-en="About">Про нас</a>
-  <a href="#partners" onclick="toggleMenu()" data-uk="Партнери" data-en="Partners">Партнери</a>
   <a href="#contact" onclick="toggleMenu()" data-uk="Контакти" data-en="Contacts">Контакти</a>
   <a class="btn btn-blue" href="#contact" onclick="toggleMenu()" data-uk="Замовити консультацію" data-en="Get consultation">Замовити консультацію</a>
 </div>
 
+<!-- HERO -->
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow rv">
-      <b><span class="dot"></span> <span data-uk="IT-агенція" data-en="IT agency">IT-агенція</span></b>
-      <span data-uk="рішення під ключ для вашого бізнесу" data-en="turnkey solutions for your business">рішення під ключ для вашого бізнесу</span>
+      <b><span class="dot"></span> <span data-uk="CoreNova" data-en="CoreNova">CoreNova</span></b>
+      <span data-uk="будуємо цифрові системи для бізнесу" data-en="we build digital systems for business">будуємо цифрові системи для бізнесу</span>
     </div>
-    <h1 class="rv" data-uk="Цифрове ядро вашого бізнесу" data-en="The digital core of your business">Цифрове ядро вашого <em>бізнесу</em></h1>
-    <p class="hero-sub rv" data-uk="Об'єднуємо сайт, CRM, Telegram-боти та AI в єдину систему, яка працює на зростання вашої компанії." data-en="We unite your website, CRM, Telegram bots and AI into one system built to grow your company.">Об'єднуємо сайт, CRM, Telegram-боти та AI в єдину систему, яка працює на зростання вашої компанії.</p>
+    <h1 class="rv">
+      <span data-uk="Будуємо цифрову систему вашого " data-en="We build the digital system of your ">Будуємо цифрову систему вашого </span><em data-uk="бізнесу" data-en="business">бізнесу</em>
+    </h1>
+    <p class="hero-sub rv" data-uk="Ми не продаємо окремі інструменти. Ми допомагаємо бізнесу створити єдину цифрову систему, де сайт, CRM, боти та AI працюють разом — і дають результат." data-en="We don't sell individual tools. We help businesses build one integrated digital system where website, CRM, bots and AI work together — and deliver results.">Ми не продаємо окремі інструменти. Ми допомагаємо бізнесу створити єдину цифрову систему, де сайт, CRM, боти та AI працюють разом — і дають результат.</p>
     <div class="hero-cta rv">
       <a class="btn btn-pri btn-lg" href="#contact" data-uk="Обговорити проєкт" data-en="Discuss your project">Обговорити проєкт</a>
-      <a class="btn btn-ghost btn-lg" href="#services" data-uk="Наші послуги" data-en="Our services">Наші послуги</a>
+      <a class="btn btn-ghost btn-lg" href="#directions" data-uk="Напрями роботи" data-en="Our directions">Напрями роботи</a>
     </div>
     <div class="hero-note rv">
-      <span>✓</span> <span data-uk="Безкоштовна консультація · Відповідь за 1 день" data-en="Free consultation · Reply within 1 day">Безкоштовна консультація · Відповідь за 1 день</span>
+      <span class="hero-note-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span data-uk="Безкоштовна консультація" data-en="Free consultation">Безкоштовна консультація</span></span>
+      <span class="hero-note-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span data-uk="Відповідь за 1 день" data-en="Reply within 1 day">Відповідь за 1 день</span></span>
+      <span class="hero-note-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span data-uk="NDA за запитом" data-en="NDA on request">NDA за запитом</span></span>
     </div>
 
     <div class="eco rv">
+      <p class="eco-label" data-uk="Єдина екосистема вашого бізнесу" data-en="Your business as one ecosystem">Єдина екосистема вашого бізнесу</p>
       <div class="eco-grid">
         <div class="eco-core">
           <svg viewBox="0 0 34 34" fill="none"><path d="M17 3 L29 10 V24 L17 31 L5 24 V10 Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><circle cx="17" cy="16.5" r="3.4" fill="#1A6EF2"/></svg>
           CoreNova
+          <span class="eco-core-sub" data-uk="— ядро системи" data-en="— the system core">— ядро системи</span>
         </div>
         <div class="eco-node">
           <div class="eco-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
-          <div class="eco-txt"><div class="eco-name" data-uk="Сайти" data-en="Websites">Сайти</div><div class="eco-sub" data-uk="та магазини" data-en="& stores">та магазини</div></div>
+          <div class="eco-txt"><div class="eco-name" data-uk="Сайти та платформи" data-en="Websites & platforms">Сайти та платформи</div><div class="eco-sub" data-uk="присутність і продажі онлайн" data-en="online presence & sales">присутність і продажі онлайн</div></div>
         </div>
         <div class="eco-node">
           <div class="eco-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/></svg></div>
-          <div class="eco-txt"><div class="eco-name">CRM</div><div class="eco-sub" data-uk="системи" data-en="systems">системи</div></div>
+          <div class="eco-txt"><div class="eco-name" data-uk="CRM та продажі" data-en="CRM & sales">CRM та продажі</div><div class="eco-sub" data-uk="управління клієнтами" data-en="client management">управління клієнтами</div></div>
         </div>
         <div class="eco-node">
           <div class="eco-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 5 L2 12l7 2 2 7 3-5 5-11z"/></svg></div>
-          <div class="eco-txt"><div class="eco-name" data-uk="Telegram-боти" data-en="Telegram bots">Telegram-боти</div><div class="eco-sub" data-uk="автоматизація" data-en="automation">автоматизація</div></div>
+          <div class="eco-txt"><div class="eco-name" data-uk="Боти та автоматизація" data-en="Bots & automation">Боти та автоматизація</div><div class="eco-sub" data-uk="процеси без участі людини" data-en="processes without manual work">процеси без участі людини</div></div>
         </div>
         <div class="eco-node">
           <div class="eco-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 0-8V6a4 4 0 0 0-4-4z"/></svg></div>
-          <div class="eco-txt"><div class="eco-name" data-uk="AI-рішення" data-en="AI solutions">AI-рішення</div><div class="eco-sub" data-uk="інтелект для бізнесу" data-en="business intelligence">інтелект для бізнесу</div></div>
+          <div class="eco-txt"><div class="eco-name" data-uk="AI та аналітика" data-en="AI & analytics">AI та аналітика</div><div class="eco-sub" data-uk="інтелект у кожному рішенні" data-en="intelligence in every decision">інтелект у кожному рішенні</div></div>
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<section class="partners" id="partners">
+<!-- PHILOSOPHY -->
+<section class="sec" id="philosophy">
   <div class="wrap">
-    <div class="partners-head rv">
-      <span class="kicker" data-uk="Наші партнери" data-en="Our partners">Наші партнери</span>
-      <h3 data-uk="Компанії, яким ми створили сайти" data-en="Companies we built websites for">Компанії, яким ми створили сайти</h3>
-    </div>
-    <div class="partners-grid rv">
-      <a class="pcard" href="#" target="_blank" rel="noopener">
-        <div class="pcard-logo" style="background:linear-gradient(135deg,#1A6EF2,#4D9EFF)">TS</div>
-        <div class="pcard-name">TechShop</div>
-        <div class="pcard-cat" data-uk="Інтернет-магазин" data-en="E-commerce">Інтернет-магазин</div>
-        <span class="pcard-link" data-uk="Перейти на сайт →" data-en="Visit site →">Перейти на сайт →</span>
-      </a>
-      <a class="pcard" href="#" target="_blank" rel="noopener">
-        <div class="pcard-logo" style="background:linear-gradient(135deg,#0891B2,#22C55E)">БД</div>
-        <div class="pcard-name">Будівельник</div>
-        <div class="pcard-cat" data-uk="Будівництво" data-en="Construction">Будівництво</div>
-        <span class="pcard-link" data-uk="Перейти на сайт →" data-en="Visit site →">Перейти на сайт →</span>
-      </a>
-      <a class="pcard" href="#" target="_blank" rel="noopener">
-        <div class="pcard-logo" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">SU</div>
-        <div class="pcard-name">StartupUA</div>
-        <div class="pcard-cat" data-uk="Технології" data-en="Technology">Технології</div>
-        <span class="pcard-link" data-uk="Перейти на сайт →" data-en="Visit site →">Перейти на сайт →</span>
-      </a>
-      <a class="pcard" href="#" target="_blank" rel="noopener">
-        <div class="pcard-logo" style="background:linear-gradient(135deg,#F59E0B,#EF4444)">MC</div>
-        <div class="pcard-name">MedCenter</div>
-        <div class="pcard-cat" data-uk="Медицина" data-en="Healthcare">Медицина</div>
-        <span class="pcard-link" data-uk="Перейти на сайт →" data-en="Visit site →">Перейти на сайт →</span>
-      </a>
+    <div class="phil rv">
+      <span class="kicker" data-uk="Філософія CoreNova" data-en="CoreNova philosophy">Філософія CoreNova</span>
+      <h2 class="phil-title" data-uk="Ціле — більше, ніж сума частин" data-en="The whole is greater than the sum of its parts">Ціле — більше, ніж сума частин</h2>
+      <p class="phil-desc" data-uk="Більшість компаній мають сайт, CRM і ще десяток сервісів — але вони не пов'язані між собою. Дані не передаються, процеси розриваються, люди витрачають час на ручну роботу. CoreNova будує інакше: єдина система, де кожен елемент підсилює інший." data-en="Most companies have a website, CRM and a dozen more services — but they're disconnected. Data doesn't flow, processes break, people waste time on manual work. CoreNova builds differently: one system where every element strengthens the others.">Більшість компаній мають сайт, CRM і ще десяток сервісів — але вони не пов'язані між собою. Дані не передаються, процеси розриваються, люди витрачають час на ручну роботу. CoreNova будує інакше: єдина система, де кожен елемент підсилює інший.</p>
+      <div class="phil-points">
+        <div class="pp">
+          <div class="pp-n" data-uk="Проблема" data-en="The problem">Проблема</div>
+          <div class="pp-h" data-uk="Інструменти без зв'язку" data-en="Disconnected tools">Інструменти без зв'язку</div>
+          <div class="pp-d" data-uk="Окремий сайт, окрема CRM, окремий бот. Кожен живе своїм життям — і жоден не підсилює інший." data-en="Separate website, separate CRM, separate bot. Each lives its own life — none of them amplify the others.">Окремий сайт, окрема CRM, окремий бот. Кожен живе своїм життям — і жоден не підсилює інший.</div>
+        </div>
+        <div class="pp">
+          <div class="pp-n" data-uk="Підхід CoreNova" data-en="CoreNova approach">Підхід CoreNova</div>
+          <div class="pp-h" data-uk="Система як єдине ціле" data-en="System as one whole">Система як єдине ціле</div>
+          <div class="pp-d" data-uk="Ми проєктуємо так, щоб кожен компонент знав про інші й передавав дані далі. Лід з сайту — одразу в CRM. Дія в боті — одразу в базу." data-en="We design each component to know about others and pass data forward. A lead from the website — immediately to CRM. A bot action — immediately to the database.">Ми проєктуємо так, щоб кожен компонент знав про інші й передавав дані далі. Лід з сайту — одразу в CRM. Дія в боті — одразу в базу.</div>
+        </div>
+        <div class="pp">
+          <div class="pp-n" data-uk="Цінність для клієнта" data-en="Client value">Цінність для клієнта</div>
+          <div class="pp-h" data-uk="Бізнес, що працює сам" data-en="Business that runs itself">Бізнес, що працює сам</div>
+          <div class="pp-d" data-uk="Менше ручної роботи. Менше помилок. Більше часу на розвиток. Ваш бізнес стає системою, а не набором задач." data-en="Less manual work. Fewer errors. More time for growth. Your business becomes a system, not a set of tasks.">Менше ручної роботи. Менше помилок. Більше часу на розвиток. Ваш бізнес стає системою, а не набором задач.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="services">
+<!-- DIRECTIONS -->
+<section class="sec" id="directions" style="background:var(--bg-soft)">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker" data-uk="Послуги" data-en="Services">Послуги</span>
-      <h2 class="sec-title" data-uk="Все, що потрібно для цифрового зростання" data-en="Everything you need to grow digitally">Все, що потрібно для цифрового зростання</h2>
-      <p class="sec-desc" data-uk="Від першого лендінгу до повної автоматизації бізнесу. Кожне рішення інтегрується в єдину екосистему." data-en="From your first landing page to full business automation. Every solution fits into one ecosystem.">Від першого лендінгу до повної автоматизації бізнесу. Кожне рішення інтегрується в єдину екосистему.</p>
+      <span class="kicker" data-uk="Напрями роботи" data-en="Areas of work">Напрями роботи</span>
+      <h2 class="sec-title" data-uk="Що ми будуємо для вашого бізнесу" data-en="What we build for your business">Що ми будуємо для вашого бізнесу</h2>
+      <p class="sec-desc" data-uk="Ми не перераховуємо технології. Ми вирішуємо бізнес-задачі — і обираємо інструменти під них, а не навпаки." data-en="We don't list technologies. We solve business challenges — and choose tools to match, not the other way around.">Ми не перераховуємо технології. Ми вирішуємо бізнес-задачі — і обираємо інструменти під них, а не навпаки.</p>
     </div>
-    <div class="bento rv">
-      <div class="card card-feat">
-        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h6"/></svg></div>
-        <div class="c-body">
-          <div class="c-name" data-uk="Сайти та інтернет-магазини" data-en="Websites & online stores">Сайти та інтернет-магазини</div>
-          <div class="c-desc" data-uk="Швидкі конверсійні сайти — від лендінгу до маркетплейсу з оплатами, CRM та аналітикою." data-en="Fast, high-converting sites — from landings to marketplaces with payments, CRM and analytics.">Швидкі конверсійні сайти — від лендінгу до маркетплейсу з оплатами, CRM та аналітикою.</div>
-          <a class="c-link" href="#contact" data-uk="Детальніше →" data-en="Learn more →">Детальніше →</a>
+    <div class="dir-grid">
+      <div class="dir-card rv rv-d1">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        </div>
+        <div>
+          <div class="dir-tag" data-uk="Напрям 01" data-en="Direction 01">Напрям 01</div>
+          <div class="dir-name" data-uk="Автоматизація бізнесу" data-en="Business automation">Автоматизація бізнесу</div>
+          <div class="dir-desc" data-uk="Знаходимо місця, де бізнес витрачає час на рутину, і замінюємо їх автоматичними процесами. Ваша команда займається справжньою роботою, а не операційними задачами." data-en="We find where your business wastes time on routine and replace it with automatic processes. Your team does real work, not operational tasks.">Знаходимо місця, де бізнес витрачає час на рутину, і замінюємо їх автоматичними процесами. Ваша команда займається справжньою роботою, а не операційними задачами.</div>
+          <div class="dir-items">
+            <div class="dir-item" data-uk="Інтеграція сервісів і систем" data-en="Service and system integrations">Інтеграція сервісів і систем</div>
+            <div class="dir-item" data-uk="Telegram-боти для бізнес-процесів" data-en="Telegram bots for business processes">Telegram-боти для бізнес-процесів</div>
+            <div class="dir-item" data-uk="Автоматичні сповіщення і звіти" data-en="Automatic notifications and reports">Автоматичні сповіщення і звіти</div>
+          </div>
         </div>
       </div>
-      <div class="card card-reg">
-        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 5 L2 12l7 2 2 7 3-5 5-11z"/></svg></div>
-        <div class="c-body">
-          <div class="c-name" data-uk="Telegram-боти" data-en="Telegram bots">Telegram-боти</div>
-          <div class="c-desc" data-uk="Автоматизація продажів, підтримки та оплат у месенджері." data-en="Automate sales, support and payments in the messenger.">Автоматизація продажів, підтримки та оплат у месенджері.</div>
-          <a class="c-link" href="#contact" data-uk="Детальніше →" data-en="Learn more →">Детальніше →</a>
+      <div class="dir-card rv rv-d2">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/></svg>
+        </div>
+        <div>
+          <div class="dir-tag" data-uk="Напрям 02" data-en="Direction 02">Напрям 02</div>
+          <div class="dir-name" data-uk="Управління клієнтами та продажами" data-en="Client & sales management">Управління клієнтами та продажами</div>
+          <div class="dir-desc" data-uk="Будуємо системи, в яких жоден клієнт не загубиться. Від першого контакту до повторного замовлення — прозоро, під контролем, без ручних таблиць." data-en="We build systems where no client gets lost. From first contact to repeat order — transparent, in control, without manual spreadsheets.">Будуємо системи, в яких жоден клієнт не загубиться. Від першого контакту до повторного замовлення — прозоро, під контролем, без ручних таблиць.</div>
+          <div class="dir-items">
+            <div class="dir-item" data-uk="CRM під задачі вашого бізнесу" data-en="CRM tailored to your business">CRM під задачі вашого бізнесу</div>
+            <div class="dir-item" data-uk="Воронки продажів і аналітика" data-en="Sales funnels and analytics">Воронки продажів і аналітика</div>
+            <div class="dir-item" data-uk="Інтеграція з сайтом і ботом" data-en="Integration with website and bot">Інтеграція з сайтом і ботом</div>
+          </div>
         </div>
       </div>
-      <div class="card card-reg">
-        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/></svg></div>
-        <div class="c-body">
-          <div class="c-name" data-uk="CRM-системи" data-en="CRM systems">CRM-системи</div>
-          <div class="c-desc" data-uk="Порядок у продажах і повний контроль роботи з клієнтами." data-en="Order in your sales and full control over client work.">Порядок у продажах і повний контроль роботи з клієнтами.</div>
-          <a class="c-link" href="#contact" data-uk="Детальніше →" data-en="Learn more →">Детальніше →</a>
+      <div class="dir-card rv rv-d3">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h4"/></svg>
+        </div>
+        <div>
+          <div class="dir-tag" data-uk="Напрям 03" data-en="Direction 03">Напрям 03</div>
+          <div class="dir-name" data-uk="Цифрові сервіси та платформи" data-en="Digital services & platforms">Цифрові сервіси та платформи</div>
+          <div class="dir-desc" data-uk="Створюємо цифрову присутність бізнесу: від лендінгу до повноцінної платформи з оплатами, кабінетами, ботами та аналітикою. Не просто сайти — цифрові точки входу в ваш бізнес." data-en="We create your business's digital presence: from a landing page to a full platform with payments, dashboards, bots and analytics. Not just websites — digital entry points into your business.">Створюємо цифрову присутність бізнесу: від лендінгу до повноцінної платформи з оплатами, кабінетами, ботами та аналітикою. Не просто сайти — цифрові точки входу в ваш бізнес.</div>
+          <div class="dir-items">
+            <div class="dir-item" data-uk="Сайти та інтернет-магазини" data-en="Websites and online stores">Сайти та інтернет-магазини</div>
+            <div class="dir-item" data-uk="Платформи з кабінетами й оплатою" data-en="Platforms with dashboards and payments">Платформи з кабінетами й оплатою</div>
+            <div class="dir-item" data-uk="Боти як цифровий сервіс" data-en="Bots as a digital service">Боти як цифровий сервіс</div>
+          </div>
         </div>
       </div>
-      <div class="card card-reg">
-        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <div class="c-body">
-          <div class="c-name" data-uk="Автоматизація" data-en="Automation">Автоматизація</div>
-          <div class="c-desc" data-uk="Зв'язуємо сервіси, прибираємо рутину, економимо час команди." data-en="We connect services, remove routine, save your team's time.">Зв'язуємо сервіси, прибираємо рутину, економимо час команди.</div>
-          <a class="c-link" href="#contact" data-uk="Детальніше →" data-en="Learn more →">Детальніше →</a>
+      <div class="dir-card rv rv-d4">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 0-8V6a4 4 0 0 0-4-4z"/></svg>
         </div>
-      </div>
-      <div class="card card-wide">
-        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 0-8V6a4 4 0 0 0-4-4z"/></svg></div>
-        <div class="c-body">
-          <div class="c-name" data-uk="AI-рішення" data-en="AI solutions">AI-рішення</div>
-          <div class="c-desc" data-uk="Інтегруємо штучний інтелект у процеси: від розумних чатів до обробки даних і прогнозів." data-en="We bring AI into your processes: from smart chats to data processing and forecasting.">Інтегруємо штучний інтелект у процеси: від розумних чатів до обробки даних і прогнозів.</div>
-          <a class="c-link" href="#contact" data-uk="Детальніше →" data-en="Learn more →">Детальніше →</a>
+        <div>
+          <div class="dir-tag" data-uk="Напрям 04" data-en="Direction 04">Напрям 04</div>
+          <div class="dir-name" data-uk="AI та сучасні технології" data-en="AI & modern technologies">AI та сучасні технології</div>
+          <div class="dir-desc" data-uk="Інтегруємо штучний інтелект там, де він справді допомагає бізнесу: замінює ручну обробку запитів, генерує відповіді, аналізує дані, прогнозує поведінку клієнтів." data-en="We integrate AI where it truly helps business: replacing manual request processing, generating responses, analyzing data, predicting customer behavior.">Інтегруємо штучний інтелект там, де він справді допомагає бізнесу: замінює ручну обробку запитів, генерує відповіді, аналізує дані, прогнозує поведінку клієнтів.</div>
+          <div class="dir-items">
+            <div class="dir-item" data-uk="AI-асистенти та чат-боти" data-en="AI assistants and chatbots">AI-асистенти та чат-боти</div>
+            <div class="dir-item" data-uk="Обробка та аналіз даних" data-en="Data processing and analysis">Обробка та аналіз даних</div>
+            <div class="dir-item" data-uk="Персоналізація та прогнозування" data-en="Personalization and forecasting">Персоналізація та прогнозування</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- WHY CORENOVA -->
 <section class="sec" id="why">
   <div class="wrap">
-    <div class="rv">
-        <span class="kicker" data-uk="Чому ми" data-en="Why us">Чому ми</span>
-        <h2 class="sec-title" data-uk="Партнер, а не просто підрядник" data-en="A partner, not just a contractor">Партнер, а не просто підрядник</h2>
-        <div class="why-list">
-          <div class="why-item">
-            <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
-            <div><div class="why-h" data-uk="Повний цикл під ключ" data-en="Full turnkey cycle">Повний цикл під ключ</div><div class="why-d" data-uk="Від аналізу бізнесу до запуску й підтримки. Ви отримуєте готовий результат." data-en="From business analysis to launch and support. You get a finished result.">Від аналізу бізнесу до запуску й підтримки. Ви отримуєте готовий результат.</div></div>
-          </div>
-          <div class="why-item">
-            <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 L4 14h7l-1 8 9-12h-7z"/></svg></div>
-            <div><div class="why-h" data-uk="Чіткі дедлайни" data-en="Clear deadlines">Чіткі дедлайни</div><div class="why-d" data-uk="Здаємо проєкти вчасно — без втрати якості." data-en="We deliver projects on time — without losing quality.">Здаємо проєкти вчасно — без втрати якості.</div></div>
-          </div>
-          <div class="why-item">
-            <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a3 3 0 0 0 3 3l3-3a3 3 0 0 0-3-3M15 12a3 3 0 0 0-3-3l-3 3a3 3 0 0 0 3 3"/></svg></div>
-            <div><div class="why-h" data-uk="Єдина екосистема" data-en="One ecosystem">Єдина екосистема</div><div class="why-d" data-uk="Сайт, CRM, боти та AI інтегровані й працюють як одне ціле." data-en="Website, CRM, bots and AI are integrated and work as one.">Сайт, CRM, боти та AI інтегровані й працюють як одне ціле.</div></div>
-          </div>
-        </div>
+    <div class="sec-head rv">
+      <span class="kicker" data-uk="Чому CoreNova" data-en="Why CoreNova">Чому CoreNova</span>
+      <h2 class="sec-title" data-uk="Ми будуємо системи, а не продаємо послуги" data-en="We build systems, not sell services">Ми будуємо системи, а не продаємо послуги</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv rv-d1">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a3 3 0 0 0 3 3l3-3a3 3 0 0 0-3-3M15 12a3 3 0 0 0-3-3l-3 3a3 3 0 0 0 3 3"/></svg></div>
+        <div class="why-h" data-uk="Ми думаємо системно" data-en="We think systemically">Ми думаємо системно</div>
+        <div class="why-d" data-uk="Кожне рішення ми проєктуємо як частину єдиної системи. Не ізольований інструмент — а компонент, який підсилює все інше." data-en="Every solution we design as part of one system. Not an isolated tool — but a component that strengthens everything else.">Кожне рішення ми проєктуємо як частину єдиної системи. Не ізольований інструмент — а компонент, який підсилює все інше.</div>
       </div>
+      <div class="why-card rv rv-d2">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="why-h" data-uk="Ми говоримо мовою бізнесу" data-en="We speak the language of business">Ми говоримо мовою бізнесу</div>
+        <div class="why-d" data-uk="Ми не пояснюємо клієнтам технічні деталі — ми говоримо про їхні задачі, процеси та результати." data-en="We don't explain technical details to clients — we talk about their tasks, processes and results.">Ми не пояснюємо клієнтам технічні деталі — ми говоримо про їхні задачі, процеси та результати.</div>
+      </div>
+      <div class="why-card rv rv-d3">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
+        <div class="why-h" data-uk="Рішення під задачу, не шаблон" data-en="Solution for the task, not a template">Рішення під задачу, не шаблон</div>
+        <div class="why-d" data-uk="Ми не пропонуємо готові пакети. Ми аналізуємо бізнес і пропонуємо те, що дійсно потрібно — не більше і не менше." data-en="We don't offer ready-made packages. We analyze the business and propose what's actually needed — no more, no less.">Ми не пропонуємо готові пакети. Ми аналізуємо бізнес і пропонуємо те, що дійсно потрібно — не більше і не менше.</div>
+      </div>
+      <div class="why-card rv rv-d1">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div class="why-h" data-uk="Чіткі строки і прозорість" data-en="Clear timelines and transparency">Чіткі строки і прозорість</div>
+        <div class="why-d" data-uk="Ми завжди знаємо, на якому етапі знаходиться проєкт. І ви теж. Без несподіванок, без затримок без пояснень." data-en="We always know what stage a project is at. And so do you. No surprises, no unexplained delays.">Ми завжди знаємо, на якому етапі знаходиться проєкт. І ви теж. Без несподіванок, без затримок без пояснень.</div>
+      </div>
+      <div class="why-card rv rv-d2">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="why-h" data-uk="Підтримка після запуску" data-en="Support after launch">Підтримка після запуску</div>
+        <div class="why-d" data-uk="Ми не зникаємо після здачі проєкту. Ми супроводжуємо систему, розвиваємо її разом з вашим бізнесом і несемо відповідальність за результат." data-en="We don't disappear after delivery. We support the system, develop it alongside your business and take responsibility for results.">Ми не зникаємо після здачі проєкту. Ми супроводжуємо систему, розвиваємо її разом з вашим бізнесом і несемо відповідальність за результат.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="sec" style="background:var(--bg-soft)">
+<!-- HONEST PARTNERSHIP -->
+<section class="sec" style="padding-top:0;padding-bottom:96px">
+  <div class="wrap">
+    <div class="honest rv">
+      <div>
+        <span class="kicker" data-uk="Чесне партнерство" data-en="Honest partnership">Чесне партнерство</span>
+        <h2 class="sec-title" data-uk="Кожна інвестиція повинна бути виправдана" data-en="Every investment must be justified">Кожна інвестиція повинна бути виправдана</h2>
+        <p class="sec-desc" data-uk="Ми будуємо довгострокові відносини з клієнтами. Тому ніколи не нав'язуємо зайве й не роздуваємо бюджети." data-en="We build long-term relationships with clients. That's why we never impose unnecessary things or inflate budgets.">Ми будуємо довгострокові відносини з клієнтами. Тому ніколи не нав'язуємо зайве й не роздуваємо бюджети.</p>
+      </div>
+      <div class="honest-list">
+        <div class="honest-item">
+          <div class="honest-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><div class="honest-h" data-uk="Не нав'язуємо зайвих функцій" data-en="We don't impose unnecessary features">Не нав'язуємо зайвих функцій</div><div class="honest-d" data-uk="Пропонуємо лише те, що дійсно вирішує задачу клієнта." data-en="We propose only what truly solves the client's problem.">Пропонуємо лише те, що дійсно вирішує задачу клієнта.</div></div>
+        </div>
+        <div class="honest-item">
+          <div class="honest-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><div class="honest-h" data-uk="Прозорий кошторис без прихованих витрат" data-en="Transparent quote with no hidden costs">Прозорий кошторис без прихованих витрат</div><div class="honest-d" data-uk="Ціна фіксується до початку роботи. Ніяких «а ще треба...» посередині." data-en="Price is fixed before work begins. No 'we also need...' in the middle.">Ціна фіксується до початку роботи. Ніяких «а ще треба...» посередині.</div></div>
+        </div>
+        <div class="honest-item">
+          <div class="honest-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><div class="honest-h" data-uk="Орієнтація на довгостроковий результат" data-en="Focus on long-term results">Орієнтація на довгостроковий результат</div><div class="honest-d" data-uk="Нам важливо, щоб система приносила бізнесу цінність роками, а не лише в день запуску." data-en="We care that the system brings value for years, not just on launch day.">Нам важливо, щоб система приносила бізнесу цінність роками, а не лише в день запуску.</div></div>
+        </div>
+        <div class="honest-item">
+          <div class="honest-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><div class="honest-h" data-uk="Рекомендуємо навіть якщо не беремо проєкт" data-en="We advise even if we don't take the project">Рекомендуємо навіть якщо не беремо проєкт</div><div class="honest-d" data-uk="Якщо ваше завдання вирішується простіше — ми скажемо про це чесно." data-en="If your task can be solved more simply — we'll say so honestly.">Якщо ваше завдання вирішується простіше — ми скажемо про це чесно.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" style="background:var(--bg-soft);padding-top:80px;padding-bottom:80px">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="kicker" data-uk="Процес" data-en="Process">Процес</span>
+      <span class="kicker" data-uk="Як ми працюємо" data-en="How we work">Як ми працюємо</span>
       <h2 class="sec-title" data-uk="Прозоро на кожному кроці" data-en="Transparent at every step">Прозоро на кожному кроці</h2>
     </div>
     <div class="proc rv">
-      <div class="step"><div class="step-n">01</div><div class="step-h" data-uk="Консультація" data-en="Consultation">Консультація</div><div class="step-d" data-uk="Безкоштовно аналізуємо ваш бізнес і завдання." data-en="We analyze your business and goals for free.">Безкоштовно аналізуємо ваш бізнес і завдання.</div></div>
-      <div class="step"><div class="step-n">02</div><div class="step-h" data-uk="Пропозиція" data-en="Proposal">Пропозиція</div><div class="step-d" data-uk="Готуємо план, строки та прозорий кошторис." data-en="We prepare a plan, timeline and transparent quote.">Готуємо план, строки та прозорий кошторис.</div></div>
-      <div class="step"><div class="step-n">03</div><div class="step-h" data-uk="Розробка" data-en="Development">Розробка</div><div class="step-d" data-uk="Реалізуємо проєкт із регулярними звітами." data-en="We build the project with regular updates.">Реалізуємо проєкт із регулярними звітами.</div></div>
-      <div class="step"><div class="step-n">04</div><div class="step-h" data-uk="Запуск і підтримка" data-en="Launch & support">Запуск і підтримка</div><div class="step-d" data-uk="Здаємо роботу й супроводжуємо систему далі." data-en="We deliver and keep supporting your system.">Здаємо роботу й супроводжуємо систему далі.</div></div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">01</div>
+        <div class="step-h" data-uk="Аналіз бізнесу" data-en="Business analysis">Аналіз бізнесу</div>
+        <div class="step-d" data-uk="Безкоштовно розбираємо ваш бізнес, процеси та задачі. Розуміємо, що насправді потрібно будувати." data-en="We analyze your business, processes and tasks for free. We understand what actually needs to be built.">Безкоштовно розбираємо ваш бізнес, процеси та задачі. Розуміємо, що насправді потрібно будувати.</div>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">02</div>
+        <div class="step-h" data-uk="Архітектура системи" data-en="System architecture">Архітектура системи</div>
+        <div class="step-d" data-uk="Проєктуємо рішення, готуємо прозорий кошторис і строки. Ви знаєте, що отримаєте і коли." data-en="We design the solution, prepare a transparent quote and timeline. You know what you'll get and when.">Проєктуємо рішення, готуємо прозорий кошторис і строки. Ви знаєте, що отримаєте і коли.</div>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">03</div>
+        <div class="step-h" data-uk="Розробка та інтеграція" data-en="Development & integration">Розробка та інтеграція</div>
+        <div class="step-d" data-uk="Будуємо систему покомпонентно з регулярними оновленнями. Ви бачите прогрес на кожному етапі." data-en="We build the system component by component with regular updates. You see progress at every stage.">Будуємо систему покомпонентно з регулярними оновленнями. Ви бачите прогрес на кожному етапі.</div>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">04</div>
+        <div class="step-h" data-uk="Запуск і розвиток" data-en="Launch & development">Запуск і розвиток</div>
+        <div class="step-d" data-uk="Запускаємо систему і не зникаємо. Супроводжуємо, вдосконалюємо й розвиваємо разом з вашим бізнесом." data-en="We launch the system and don't disappear. We support, improve and develop it alongside your business.">Запускаємо систему і не зникаємо. Супроводжуємо, вдосконалюємо й розвиваємо разом з вашим бізнесом.</div>
+      </div>
     </div>
   </div>
 </section>
 
-
+<!-- CTA -->
 <section class="cta-sec">
   <div class="wrap">
     <div class="cta-box rv">
       <span class="kicker" data-uk="Почнімо" data-en="Let's start">Почнімо</span>
-      <h2 data-uk="Готові розпочати ваш проєкт?" data-en="Ready to start your project?">Готові розпочати ваш проєкт?</h2>
-      <p data-uk="Залиште заявку — і ми зв'яжемося протягом одного робочого дня." data-en="Leave a request and we'll get back within one business day.">Залиште заявку — і ми зв'яжемося протягом одного робочого дня.</p>
+      <h2 data-uk="Готові будувати цифрову систему вашого бізнесу?" data-en="Ready to build your business's digital system?">Готові будувати цифрову систему вашого бізнесу?</h2>
+      <p data-uk="Розкажіть про ваш бізнес — і ми покажемо, яку систему можна побудувати. Безкоштовна консультація, відповідь за 1 день." data-en="Tell us about your business — and we'll show what system can be built. Free consultation, reply within 1 day.">Розкажіть про ваш бізнес — і ми покажемо, яку систему можна побудувати. Безкоштовна консультація, відповідь за 1 день.</p>
       <a class="btn btn-blue" href="#contact" data-uk="Обговорити проєкт" data-en="Discuss the project">Обговорити проєкт</a>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="sec" id="contact" style="padding-top:30px">
   <div class="wrap">
     <div class="contact">
       <div class="rv">
         <span class="kicker" data-uk="Контакти" data-en="Contacts">Контакти</span>
-        <h2 class="sec-title" data-uk="Залиште заявку" data-en="Leave a request">Залиште заявку</h2>
-        <p class="sec-desc" data-uk="Розкажіть про ваше завдання — підготуємо рішення й кошторис." data-en="Tell us about your task — we'll prepare a solution and a quote.">Розкажіть про ваше завдання — підготуємо рішення й кошторис.</p>
+        <h2 class="sec-title" data-uk="Розкажіть про ваш бізнес" data-en="Tell us about your business">Розкажіть про ваш бізнес</h2>
+        <p class="sec-desc" data-uk="Опишіть задачу — ми безкоштовно проаналізуємо ситуацію і запропонуємо рішення." data-en="Describe your challenge — we'll analyze the situation for free and propose a solution.">Опишіть задачу — ми безкоштовно проаналізуємо ситуацію і запропонуємо рішення.</p>
         <div class="perks">
-          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><span data-uk="Безкоштовна консультація та аналіз" data-en="Free consultation and analysis">Безкоштовна консультація та аналіз</span></div>
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><span data-uk="Безкоштовний аналіз бізнесу та задачі" data-en="Free business and task analysis">Безкоштовний аналіз бізнесу та задачі</span></div>
           <div class="perk"><div class="perk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span data-uk="Відповідь протягом 1 робочого дня" data-en="Reply within 1 business day">Відповідь протягом 1 робочого дня</span></div>
-          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span data-uk="NDA та конфіденційність гарантовані" data-en="NDA and confidentiality guaranteed">NDA та конфіденційність гарантовані</span></div>
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span data-uk="NDA та повна конфіденційність" data-en="NDA and full confidentiality">NDA та повна конфіденційність</span></div>
         </div>
       </div>
       <div class="form-box rv">
-        <h3 data-uk="Розкажіть про проєкт" data-en="Tell us about your project">Розкажіть про проєкт</h3>
+        <h3 data-uk="Написати нам" data-en="Write to us">Написати нам</h3>
         <div class="fg">
           <div class="frow">
             <input class="fi" id="fn" type="text" placeholder="Ім'я" data-ph-uk="Ім'я" data-ph-en="Name">
@@ -491,15 +580,15 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
           </div>
           <input class="fi" id="fe" type="email" placeholder="Email">
           <select class="fi" id="fs">
-            <option value="" data-uk="Оберіть послугу" data-en="Choose a service">Оберіть послугу</option>
-            <option data-uk="Сайт або магазин" data-en="Website or store">Сайт або магазин</option>
-            <option data-uk="Telegram-бот" data-en="Telegram bot">Telegram-бот</option>
-            <option data-uk="CRM-система" data-en="CRM system">CRM-система</option>
-            <option data-uk="Автоматизація" data-en="Automation">Автоматизація</option>
+            <option value="" data-uk="Що хочете побудувати?" data-en="What do you want to build?">Що хочете побудувати?</option>
+            <option data-uk="Автоматизація бізнесу" data-en="Business automation">Автоматизація бізнесу</option>
+            <option data-uk="CRM та управління продажами" data-en="CRM and sales management">CRM та управління продажами</option>
+            <option data-uk="Сайт або платформа" data-en="Website or platform">Сайт або платформа</option>
             <option data-uk="AI-рішення" data-en="AI solution">AI-рішення</option>
+            <option data-uk="Комплексна система" data-en="Complete system">Комплексна система</option>
           </select>
-          <textarea class="fi fi-ta" id="fm" placeholder="Коротко про завдання" data-ph-uk="Коротко про завдання" data-ph-en="Briefly about your task"></textarea>
-          <button class="btn btn-blue" onclick="submitForm()" data-uk="Надіслати заявку" data-en="Send request">Надіслати заявку</button>
+          <textarea class="fi fi-ta" id="fm" placeholder="Коротко про бізнес і задачу" data-ph-uk="Коротко про бізнес і задачу" data-ph-en="Briefly about your business and task"></textarea>
+          <button class="btn btn-blue" onclick="submitForm()" data-uk="Надіслати" data-en="Send">Надіслати</button>
         </div>
       </div>
     </div>
@@ -517,22 +606,22 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
           </svg>
           <span class="logo-txt"><span class="logo-name">CoreNova</span><span class="logo-sub" data-uk="Цифрове ядро бізнесу" data-en="Digital business core">Цифрове ядро бізнесу</span></span>
         </a>
-        <p class="ft-about" data-uk="Цифрові системи під ключ для зростання вашого бізнесу: сайти, CRM, боти, AI та автоматизація." data-en="Turnkey digital systems for business growth: websites, CRM, bots, AI and automation.">Цифрові системи під ключ для зростання вашого бізнесу: сайти, CRM, боти, AI та автоматизація.</p>
+        <p class="ft-about" data-uk="Будуємо єдині цифрові системи для бізнесу: сайти, CRM, Telegram-боти та AI як одна екосистема." data-en="We build integrated digital systems for business: websites, CRM, Telegram bots and AI as one ecosystem.">Будуємо єдині цифрові системи для бізнесу: сайти, CRM, Telegram-боти та AI як одна екосистема.</p>
       </div>
       <div>
-        <div class="ft-h" data-uk="Послуги" data-en="Services">Послуги</div>
+        <div class="ft-h" data-uk="Напрями" data-en="Directions">Напрями</div>
         <div class="ft-links">
-          <a href="#services" data-uk="Сайти та магазини" data-en="Websites & stores">Сайти та магазини</a>
-          <a href="#services" data-uk="Telegram-боти" data-en="Telegram bots">Telegram-боти</a>
-          <a href="#services" data-uk="CRM-системи" data-en="CRM systems">CRM-системи</a>
-          <a href="#services" data-uk="AI-рішення" data-en="AI solutions">AI-рішення</a>
+          <a href="#directions" data-uk="Автоматизація бізнесу" data-en="Business automation">Автоматизація бізнесу</a>
+          <a href="#directions" data-uk="Управління клієнтами" data-en="Client management">Управління клієнтами</a>
+          <a href="#directions" data-uk="Цифрові платформи" data-en="Digital platforms">Цифрові платформи</a>
+          <a href="#directions" data-uk="AI-рішення" data-en="AI solutions">AI-рішення</a>
         </div>
       </div>
       <div>
         <div class="ft-h" data-uk="Компанія" data-en="Company">Компанія</div>
         <div class="ft-links">
-          <a href="#why" data-uk="Про нас" data-en="About">Про нас</a>
-          <a href="#partners" data-uk="Партнери" data-en="Partners">Партнери</a>
+          <a href="#philosophy" data-uk="Філософія" data-en="Philosophy">Філософія</a>
+          <a href="#why" data-uk="Чому CoreNova" data-en="Why CoreNova">Чому CoreNova</a>
           <a href="#contact" data-uk="Контакти" data-en="Contacts">Контакти</a>
         </div>
       </div>
@@ -572,8 +661,21 @@ function toggleMenu(){
   document.getElementById('burger').classList.toggle('x');
   document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
 }
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');e.target.querySelectorAll&&e.target.querySelectorAll('.prog-fill').forEach(f=>f.style.width=f.dataset.w+'%')}})},{threshold:.12});
+// Stagger animation for grid children
+function addStagger(selector,parentSelector){
+  document.querySelectorAll(parentSelector).forEach(parent=>{
+    parent.querySelectorAll(selector).forEach((el,i)=>{
+      el.style.transitionDelay=(i*0.1)+'s';
+    });
+  });
+}
+addStagger('.dir-card','.dir-grid');
+addStagger('.why-card','.why-grid');
+addStagger('.pp','.phil-points');
+
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis')}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
 function submitForm(){
   const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
   if(!n||!e){alert(lang==='uk'?'Заповніть ім\'я та email':'Please fill in name and email');return}
