@@ -162,19 +162,19 @@ nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.88);backdrop-
 /* PROCESS ANIMATION */
 @media(min-width:1024px){
   .proc{position:relative}
-  .proc::before{content:'';position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),#60a5fa);width:0;border-radius:2px;transition:width 1.4s cubic-bezier(.4,0,.2,1);z-index:1}
+  .proc::before{content:'';position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),#60a5fa);width:0;border-radius:2px;transition:width 2.4s cubic-bezier(.4,0,.2,1);z-index:1}
   .proc.proc-go::before{width:100%}
 }
-.proc-ready .step{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
-.proc-ready.proc-go .step:nth-child(1){opacity:1;transform:none;transition-delay:.1s}
-.proc-ready.proc-go .step:nth-child(2){opacity:1;transform:none;transition-delay:.4s}
-.proc-ready.proc-go .step:nth-child(3){opacity:1;transform:none;transition-delay:.7s}
-.proc-ready.proc-go .step:nth-child(4){opacity:1;transform:none;transition-delay:1.0s}
-.proc-ready .step-line{width:0;transition:width .4s ease}
-.proc-ready.proc-go .step:nth-child(1) .step-line{width:28px;transition-delay:.3s}
-.proc-ready.proc-go .step:nth-child(2) .step-line{width:28px;transition-delay:.6s}
-.proc-ready.proc-go .step:nth-child(3) .step-line{width:28px;transition-delay:.9s}
-.proc-ready.proc-go .step:nth-child(4) .step-line{width:28px;transition-delay:1.2s}
+.proc-ready .step{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.proc-ready.proc-go .step:nth-child(1){opacity:1;transform:none;transition-delay:.2s}
+.proc-ready.proc-go .step:nth-child(2){opacity:1;transform:none;transition-delay:.8s}
+.proc-ready.proc-go .step:nth-child(3){opacity:1;transform:none;transition-delay:1.4s}
+.proc-ready.proc-go .step:nth-child(4){opacity:1;transform:none;transition-delay:2.0s}
+.proc-ready .step-line{width:0;transition:width .6s ease}
+.proc-ready.proc-go .step:nth-child(1) .step-line{width:28px;transition-delay:.6s}
+.proc-ready.proc-go .step:nth-child(2) .step-line{width:28px;transition-delay:1.2s}
+.proc-ready.proc-go .step:nth-child(3) .step-line{width:28px;transition-delay:1.8s}
+.proc-ready.proc-go .step:nth-child(4) .step-line{width:28px;transition-delay:2.4s}
 
 /* CTA */
 .cta-sec{padding:96px 0}
