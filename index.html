@@ -159,6 +159,23 @@ nav{position:sticky;top:0;z-index:100;background:rgba(252,252,253,.88);backdrop-
 .step-d{font-size:14px;color:var(--ink-2);line-height:1.6}
 .step-line{width:28px;height:2px;background:var(--blue);border-radius:2px;margin-bottom:16px}
 
+/* PROCESS ANIMATION */
+@media(min-width:1024px){
+  .proc{position:relative}
+  .proc::before{content:'';position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),#60a5fa);width:0;border-radius:2px;transition:width 1.4s cubic-bezier(.4,0,.2,1);z-index:1}
+  .proc.proc-go::before{width:100%}
+}
+.proc-ready .step{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.proc-ready.proc-go .step:nth-child(1){opacity:1;transform:none;transition-delay:.1s}
+.proc-ready.proc-go .step:nth-child(2){opacity:1;transform:none;transition-delay:.4s}
+.proc-ready.proc-go .step:nth-child(3){opacity:1;transform:none;transition-delay:.7s}
+.proc-ready.proc-go .step:nth-child(4){opacity:1;transform:none;transition-delay:1.0s}
+.proc-ready .step-line{width:0;transition:width .4s ease}
+.proc-ready.proc-go .step:nth-child(1) .step-line{width:28px;transition-delay:.3s}
+.proc-ready.proc-go .step:nth-child(2) .step-line{width:28px;transition-delay:.6s}
+.proc-ready.proc-go .step:nth-child(3) .step-line{width:28px;transition-delay:.9s}
+.proc-ready.proc-go .step:nth-child(4) .step-line{width:28px;transition-delay:1.2s}
+
 /* CTA */
 .cta-sec{padding:96px 0}
 .cta-box{background:var(--ink);border-radius:28px;padding:80px 64px;text-align:center;position:relative;overflow:hidden}
@@ -517,7 +534,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 32px}
       <span class="kicker" data-uk="Як ми працюємо" data-en="How we work">Як ми працюємо</span>
       <h2 class="sec-title" data-uk="Прозоро на кожному кроці" data-en="Transparent at every step">Прозоро на кожному кроці</h2>
     </div>
-    <div class="proc rv">
+    <div class="proc">
       <div class="step">
         <div class="step-line"></div>
         <div class="step-n">01</div>
@@ -679,6 +696,10 @@ addStagger('.pp','.phil-points');
 
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis')}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Process section animation
+const procObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('proc-go');procObs.unobserve(e.target)}})},{threshold:.2});
+document.querySelectorAll('.proc').forEach(el=>{el.classList.add('proc-ready');procObs.observe(el)});
 
 function submitForm(){
   const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
